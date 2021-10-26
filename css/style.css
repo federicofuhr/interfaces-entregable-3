@@ -20,7 +20,6 @@
 
 .scene-8 {
     background-image: url("../img/scene/8.png");
-    animation: scroll 40s infinite linear;
 }
 
 .scene-7 {
@@ -29,44 +28,45 @@
 
 .scene-6 {
     background-image: url("../img/scene/6.png");
-    animation: scroll 18s infinite linear;
+    animation: scroll 50s infinite linear;
 }
 
 .scene-5 {
     background-image: url("../img/scene/5.png");
-    animation: scroll 17s infinite linear;
+    animation: scroll 40s infinite linear;
 }
 
 .scene-4 {
     background-image: url("../img/scene/4.png");
-    animation: scroll 15s infinite linear;
+    animation: scroll 25s infinite linear;
 }
 
 .scene-3 {
     background-image: url("../img/scene/3.png");
-    animation: scroll 12s infinite linear;
+    animation: scroll 20s infinite linear;
 }
 
 .scene-2 {
     background-image: url("../img/scene/2.png");
-    animation: scroll 8s infinite linear;
+    animation: scroll 10s infinite linear;
 }
 
 .scene-1 {
     background-image: url("../img/scene/1.png");
-    animation: scroll 5s infinite linear;
+    animation: scroll 4s infinite linear;
 }
 
 .character {
-    background-image: url("../img/character/run.png");
-    z-index: -1;
-    transform: scale(3);
+    top: 80%;
+    left: 5%;
     position: absolute;
+    background-image: url("../img/character/run.png");
+    transform: scale(2);
     border: solid red 1px;
     height: 65px;
     width: 45px;
     background-position-x: -40px;
-    animation: character-run 0.7s steps(4) infinite;
+    animation: character-run 0.8s steps(4) infinite;
     
 }
 
