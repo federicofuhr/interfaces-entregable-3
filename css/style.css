@@ -56,7 +56,7 @@
     animation: scroll 4s infinite linear;
 }
 
-.character {
+.character-running {
     top: 80%;
     left: 5%;
     position: absolute;
@@ -70,6 +70,34 @@
     
 }
 
+.character-jump {
+    top: 80%;
+    left: 5%;
+    position: absolute;
+    background-image: url("../img/character/jump.png");
+    transform: scale(2);
+    border: solid red 1px;
+    height: 65px;
+    width: 45px;
+    background-position-x: -40px;
+    animation: character-jump 1.2s steps(4);
+}
+
+.character-slide {
+    top: 80%;
+    left: 5%;
+    position: absolute;
+    background-image: url("../img/character/slide.png");
+    transform: scale(2);
+    border: solid red 1px;
+    height: 65px;
+    width: 50px;
+    background-position-x: -40px;
+    animation: character-slide 1.2s steps(4);
+}
+
+/*ANIMACIONES*/
+
 @keyframes character-run {
     0% {
         background-position-y: 0px;
@@ -80,31 +108,31 @@
     }
 }
 
-@keyframes knight-run {
+@keyframes character-jump {
     0% {
-        transition: none;
         background-position-y: 0px;
     }
 
-    25% {
-        transition: none;
-        background-position-y: -20px;
-    }
-
     50% {
-        transition: none;
-        background-position-y: -40px;
+        top: 65%;
     }
 
     75% {
-        transition: none;
-        background-position-y: -60px;
+        top: 65%;
     }
 
     100% {
-        transition: none;
-        background-position-y: -80px;
-        
+        top: 80%;
+        background-position-y: -260px;
+    }
+}
+
+@keyframes character-slide {
+    0% {
+        background-position-y: 0px;
     }
 
+    100% {
+        background-position-y: -260px;
+    }
 }
