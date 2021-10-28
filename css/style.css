@@ -92,7 +92,7 @@
 }
 
 #trunk-obstacle {
-    top: 82%;
+    top: 80%;
     position: absolute;
     border: solid red 1px;
     height: 65px;
@@ -123,10 +123,6 @@
         right: 1%;
     }
 
-    50% {
-        display: none;
-        right: 50%;
-    }
 
     100% {
         right: 99%;

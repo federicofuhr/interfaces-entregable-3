@@ -9,7 +9,7 @@ export default class Character {
     }
 
     getPositionX() {
-        return this.leftPosition;
+        return this.character.offsetLeft;
     }
 
     getPositionY() {

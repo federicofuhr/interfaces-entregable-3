@@ -12,11 +12,12 @@ function init() {
     document.addEventListener("keydown", (e) => { character.action(e); })
     characterDiv.addEventListener("animationend", () => { character.defaultAnimation(); });
 
-    setInterval(() => {
+    let collision = setInterval(() => {
         if (checkCollision()) {
+            //clearInterval(collision);
             console.log("chocaste capo");
         }
-    }, 500);
+    }, 1);
 
     /*FUNCIONES*/
     
@@ -27,11 +28,12 @@ function init() {
         let characterY2 = character.getHeight() + characterY1;
         let obstacleX1 = obstacle.getPositionX();
         let obstacleX2 = obstacle.getWidth() + obstacleX1;
-        let obstacleY1 = character.getPositionY();
-        let obstacleY2 = character.getHeight() + obstacleY1;
-        if ((characterX2 >= obstacleX1) && (characterX2 <= obstacleX2)) {     
+        let obstacleY1 = obstacle.getPositionY();
+        let obstacleY2 = obstacle.getHeight() + obstacleY1;
+        if ((characterX2 >= obstacleX1) && (characterX1 <= obstacleX2)) {   
+            //debugger;
             if ((characterY1 >= obstacleY1) && (characterY2 <= obstacleY2)) {
-                console.log("entro al if");
+                //debugger;
                 return true;
             }
             return false;
