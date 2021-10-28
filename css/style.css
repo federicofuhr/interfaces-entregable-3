@@ -1,10 +1,5 @@
-@keyframes scroll {
-    0% {
-        background-position-x: 0px;
-    }
-    100% {
-        background-position-x: -1920px;
-    }
+.container {
+    margin: 0;
 }
 
 .scene {
@@ -53,7 +48,7 @@
 
 .scene-1 {
     background-image: url("../img/scene/1.png");
-    animation: scroll 4s infinite linear;
+    animation: scroll 6s infinite linear;
 }
 
 .character-running {
@@ -96,7 +91,47 @@
     animation: character-slide 1.2s steps(4);
 }
 
+#trunk-obstacle {
+    top: 82%;
+    position: absolute;
+    border: solid red 1px;
+    height: 65px;
+    width: 45px;
+    transform: scale(1.5);
+    background-position-x: -40px;
+    animation: obstacle-scroll 6s infinite linear;
+}
+
+#trunk-obstacle > img {
+    width: 100%;
+    height: 100%;
+}
+
 /*ANIMACIONES*/
+
+@keyframes scroll {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -1920px;
+    }
+}
+
+@keyframes obstacle-scroll {
+    0% {
+        right: 1%;
+    }
+
+    50% {
+        display: none;
+        right: 50%;
+    }
+
+    100% {
+        right: 99%;
+    }
+}
 
 @keyframes character-run {
     0% {

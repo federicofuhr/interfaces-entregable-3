@@ -4,7 +4,28 @@ export default class Character {
         this.topPosition = character.offsetTop;
         this.leftPosition = character.offsetLeft;
         this.width = character.offsetWidth;
-        this.currentClassName = "character-running";
+        this.height = this.character.offsetHeight;
+        this.currentClassName = this.character.className;
+    }
+
+    getPositionX() {
+        return this.leftPosition;
+    }
+
+    getPositionY() {
+        return this.character.offsetTop;
+    }
+
+    getWidth() {
+        return this.width;
+    }
+
+    getHeight() {
+        return this.height;
+    }
+
+    consoleLog() {
+        console.log(this);
     }
 
     run() {
@@ -19,7 +40,6 @@ export default class Character {
     }
 
     slide() {
-        console.log("entro al slide");
         this.character.classList.toggle(this.currentClassName);
         this.currentClassName = "character-slide";
         this.character.classList.toggle(this.currentClassName);
@@ -34,7 +54,6 @@ export default class Character {
     }
 
     action(event) {
-        console.log(event);
         const key = event.key;
         switch (key) {
             case "z":
