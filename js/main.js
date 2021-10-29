@@ -46,7 +46,7 @@ function init() {
         let obstacleY1 = obstacle.getPositionY();
         let obstacleY2 = obstacle.getHeight() + obstacleY1;
         if ((characterX2 >= obstacleX1) && (characterX1 <= obstacleX2)) {
-            if ((characterY1 >= obstacleY1) && (characterY2 <= obstacleY2)) {
+            if ((characterY1 <= obstacleY1)) {
                 return true;
             }
             return false;
@@ -63,8 +63,6 @@ function init() {
             let obstacle = obstacles[i];
             obstacle.getDiv().style.animationPlayState = "paused";
             
-        }
-        trunk.style.animationPlayState = "paused";
-        
+        }        
     }
 }
