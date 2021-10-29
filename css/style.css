@@ -132,7 +132,7 @@
     background-image: url("../img/coin/Gold_1.png");
     background-size: contain;
     background-repeat: no-repeat;
-    animation: coin-scroll 3s infinite;
+    animation: coin-scroll 3s infinite linear;
 }
 
 .coin-spin {
