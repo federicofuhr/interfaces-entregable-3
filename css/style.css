@@ -57,12 +57,19 @@
     position: absolute;
     background-image: url("../img/character/run.png");
     transform: scale(2);
-    border: solid red 1px;
     height: 65px;
     width: 45px;
     background-position-x: -40px;
     animation: character-run 0.8s steps(4) infinite;
 
+}
+
+#div-count {
+    left: 80%;
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
 }
 
 .character-jump {
@@ -71,7 +78,6 @@
     position: absolute;
     background-image: url("../img/character/jump.png");
     transform: scale(2);
-    border: solid red 1px;
     height: 65px;
     width: 45px;
     background-position-x: -40px;
@@ -84,7 +90,6 @@
     position: absolute;
     background-image: url("../img/character/slide.png");
     transform: scale(2);
-    border: solid red 1px;
     height: 65px;
     width: 50px;
     background-position-x: -40px;
@@ -97,7 +102,6 @@
     position: absolute;
     background-image: url("../img/character/death.png");
     transform: scale(2);
-    border: solid red 1px;
     height: 65px;
     width: 50px;
     background-position-x: -40px;
@@ -107,7 +111,6 @@
 #trunk-obstacle {
     top: 80%;
     position: absolute;
-    border: solid red 1px;
     height: 80px;
     width: 45px;
     transform: scale(1.5);
@@ -120,17 +123,28 @@
     height: 100%;
 }
 
-#coin {
+.coin-scroll {
     top: 70%;
     right: 70%;
     position: absolute;
-    border: solid red 1px;
     height: 45px;
     width: 45px;
     background-image: url("../img/coin/Gold_1.png");
     background-size: contain;
     background-repeat: no-repeat;
-    animation: coin-spin 1.5s infinite;
+    animation: coin-scroll 3s infinite;
+}
+
+.coin-spin {
+    top: 70%;
+    left: 5%;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    background-image: url("../img/coin/Gold_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: coin-spin 3s infinite;
 }
 
 .stop {
@@ -163,7 +177,7 @@
 
 @keyframes coin-scroll {
     0% {
-        right: 70%;
+        right: 1%;
     }
 
     100% {
