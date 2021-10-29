@@ -48,7 +48,7 @@ function init() {
         let obstacleY1 = obstacle.getPositionY();
         let obstacleY2 = obstacle.getHeight() + obstacleY1;
         if ((characterX2 >= coinX1) && (characterX1 <= coinX2)) {
-            if ((characterY1 >= coinY1) && (characterY1 <= coinY2)) {
+            if ((characterY1 <= coinY1)) {
                 count += 100;
                 document.querySelector("#count").innerHTML = count;
                 coin.spin();
