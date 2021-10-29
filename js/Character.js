@@ -6,6 +6,7 @@ export default class Character {
         this.width = character.offsetWidth;
         this.height = this.character.offsetHeight;
         this.currentClassName = this.character.className;
+        this.dead = false;
     }
 
     getPositionX() {
@@ -22,6 +23,14 @@ export default class Character {
 
     getHeight() {
         return this.height;
+    }
+
+    isDead() {
+        return this.dead;
+    }
+
+    setDead() {
+        this.dead = true;
     }
 
     consoleLog() {
@@ -43,6 +52,14 @@ export default class Character {
         this.character.classList.toggle(this.currentClassName);
         this.currentClassName = "character-slide";
         this.character.classList.toggle(this.currentClassName);
+    }
+
+    die() {
+        this.setDead();
+        this.character.classList.toggle(this.currentClassName);
+        this.currentClassName = "character-die";
+        this.character.classList.add(this.currentClassName);
+        //this.character.classList.add()
     }
 
     defaultAnimation() {

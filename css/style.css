@@ -62,7 +62,7 @@
     width: 45px;
     background-position-x: -40px;
     animation: character-run 0.8s steps(4) infinite;
-    
+
 }
 
 .character-jump {
@@ -91,6 +91,19 @@
     animation: character-slide 1.2s steps(4);
 }
 
+.character-die {
+    top: 80%;
+    left: 5%;
+    position: absolute;
+    background-image: url("../img/character/death.png");
+    transform: scale(2);
+    border: solid red 1px;
+    height: 65px;
+    width: 50px;
+    background-position-x: -40px;
+    animation: character-die 1.2s steps(4);
+}
+
 #trunk-obstacle {
     top: 80%;
     position: absolute;
@@ -107,12 +120,36 @@
     height: 100%;
 }
 
+#coin {
+    top: 70%;
+    right: 70%;
+    position: absolute;
+    border: solid red 1px;
+    height: 45px;
+    width: 45px;
+    background-image: url("../img/coin/Gold_1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: coin-spin 1.5s infinite;
+}
+
+#coin > img {
+    width: 100%;
+    height: 100%;
+}
+
+.stop {
+    animation-play-state: paused;
+}
+
+
 /*ANIMACIONES*/
 
 @keyframes scroll {
     0% {
         background-position-x: 0px;
     }
+
     100% {
         background-position-x: -1920px;
     }
@@ -127,6 +164,50 @@
     100% {
         right: 99%;
     }
+}
+
+@keyframes coin-scroll {
+    0% {
+        right: 70%;
+    }
+
+    100% {
+        right: 99%;
+    }
+}
+
+@keyframes coin-spin {
+    0% {
+        background-image: url("../img/coin/Gold_1.png");    
+    }
+    20% {
+        background-image: url("../img/coin/Gold_2.png");    
+    }
+    30% {
+        background-image: url("../img/coin/Gold_3.png");    
+    }
+    40% {
+        background-image: url("../img/coin/Gold_4.png");    
+    }
+    50% {
+        background-image: url("../img/coin/Gold_5.png");    
+    }
+    60% {
+        background-image: url("../img/coin/Gold_6.png");    
+    }
+    70% {
+        background-image: url("../img/coin/Gold_7.png");    
+    }
+    80% {
+        background-image: url("../img/coin/Gold_8.png");    
+    }
+    90% {
+        background-image: url("../img/coin/Gold_9.png");    
+    }
+    100% {
+        background-image: url("../img/coin/Gold_10.png");    
+    }
+    
 }
 
 @keyframes character-run {
@@ -159,6 +240,16 @@
 }
 
 @keyframes character-slide {
+    0% {
+        background-position-y: 0px;
+    }
+
+    100% {
+        background-position-y: -260px;
+    }
+}
+
+@keyframes character-die {
     0% {
         background-position-y: 0px;
     }

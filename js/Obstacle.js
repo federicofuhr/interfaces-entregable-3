@@ -7,6 +7,10 @@ export default class Obstacle {
         this.height = this.obstacle.offsetHeight;
     }
 
+    getDiv() {
+        return this.obstacle;
+    }
+
     getPositionX() {
         return this.obstacle.offsetLeft;
     }

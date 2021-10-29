@@ -9,18 +9,25 @@ function init() {
     let characterDiv = document.querySelector("#character");
     let character = new Character();
     let obstacle = new Obstacle();
-    document.addEventListener("keydown", (e) => { character.action(e); })
-    characterDiv.addEventListener("animationend", () => { character.defaultAnimation(); });
+    document.addEventListener("keydown", (e) => {
+        character.action(e);
+    })
+    characterDiv.addEventListener("animationend", () => {
+        if (!character.isDead()) {
+            character.defaultAnimation();
+        }
+    });
 
     let collision = setInterval(() => {
         if (checkCollision()) {
-            //clearInterval(collision);
-            console.log("chocaste capo");
+            clearInterval(collision);
+            stopGame();
+            character.die();
         }
-    }, 1);
+    }, 50);
 
     /*FUNCIONES*/
-    
+
     function checkCollision() {
         let characterX1 = character.getPositionX();
         let characterX2 = character.getWidth() + characterX1;
@@ -30,14 +37,22 @@ function init() {
         let obstacleX2 = obstacle.getWidth() + obstacleX1;
         let obstacleY1 = obstacle.getPositionY();
         let obstacleY2 = obstacle.getHeight() + obstacleY1;
-        if ((characterX2 >= obstacleX1) && (characterX1 <= obstacleX2)) {   
-            //debugger;
+        if ((characterX2 >= obstacleX1) && (characterX1 <= obstacleX2)) {
             if ((characterY1 >= obstacleY1) && (characterY2 <= obstacleY2)) {
-                //debugger;
                 return true;
             }
             return false;
         }
         return false;
+    }
+
+    function stopGame() {
+        let backgroundLayers = document.querySelectorAll(".scene");
+        for (let i = 0; i < backgroundLayers.length; i++) {
+            backgroundLayers[i].classList.add("stop");
+        }
+        let trunk = document.querySelector("#trunk-obstacle");
+        trunk.style.animationPlayState = "paused";
+        
     }
 }
