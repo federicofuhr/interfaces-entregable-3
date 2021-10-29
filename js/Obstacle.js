@@ -1,6 +1,6 @@
 export default class Obstacle {
-    constructor() {
-        this.obstacle = document.querySelector(".obstacle");
+    constructor(obstacleContainer) {
+        this.obstacle = obstacleContainer;
         this.topPosition = this.obstacle.offsetTop;
         this.leftPosition = this.obstacle.offsetLeft;
         this.width = this.obstacle.offsetWidth;

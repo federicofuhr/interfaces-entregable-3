@@ -8,7 +8,8 @@ function init() {
 
     let characterDiv = document.querySelector("#character");
     let character = new Character();
-    let obstacle = new Obstacle();
+    let obstacle = new Obstacle(document.querySelector("#trunk-obstacle"));
+    let obstacle2 = new Obstacle(document.querySelector("#trunk-obstacle2"));
     document.addEventListener("keydown", (e) => {
         character.action(e);
     })
@@ -19,16 +20,23 @@ function init() {
     });
 
     let collision = setInterval(() => {
-        if (checkCollision()) {
-            clearInterval(collision);
-            stopGame();
-            character.die();
+        for (let i = 0; i < obstacles.length; i++) {
+            let obstacle = obstacles[i];
+            if (checkCollision(obstacle)) {
+                clearInterval(collision);
+                stopGame();
+                character.die();
+            }   
         }
-    }, 50);
+    }, 1);
+
+    let obstacles = [];
+    obstacles.push(obstacle);
+    obstacles.push(obstacle2);
 
     /*FUNCIONES*/
 
-    function checkCollision() {
+    function checkCollision(obstacle) {
         let characterX1 = character.getPositionX();
         let characterX2 = character.getWidth() + characterX1;
         let characterY1 = character.getPositionY();
@@ -51,7 +59,11 @@ function init() {
         for (let i = 0; i < backgroundLayers.length; i++) {
             backgroundLayers[i].classList.add("stop");
         }
-        let trunk = document.querySelector("#trunk-obstacle");
+        for (let i = 0; i < obstacles.length; i++) {
+            let obstacle = obstacles[i];
+            obstacle.getDiv().style.animationPlayState = "paused";
+            
+        }
         trunk.style.animationPlayState = "paused";
         
     }
