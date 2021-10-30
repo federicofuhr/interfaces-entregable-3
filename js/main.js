@@ -58,7 +58,7 @@ function init() {
             }
         }
         if ((characterX2 >= obstacleX1) && (characterX1 <= obstacleX2)) {
-            if ((characterY1 >= obstacleY1) && (characterY2 <= obstacleY2)) {
+            if ((characterY1 <= obstacleY1)) {
                 return true;
             }
             return false;
