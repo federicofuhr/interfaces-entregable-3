@@ -35,6 +35,11 @@ function init() {
                 clearInterval(collision);
                 stopGame();
                 character.die();
+                setTimeout(() => {
+                    document.querySelector(".death-menu").style.display = "block";
+                    document.querySelector(".scene-8").style.display = "none";
+                    document.querySelector("body").style.backgroundColor = "#ad6161";
+                }, 900);
             }   
         }
     }, 100);
@@ -84,8 +89,8 @@ function init() {
         }
         for (let i = 0; i < obstacles.length; i++) {
             let obstacle = obstacles[i];
-            obstacle.getDiv().style.animationPlayState = "paused";
-            
-        }        
+            obstacle.getDiv().style.animationPlayState = "paused"; 
+        }  
+        coin.getDiv().style.animationPlayState = "paused";      
     }
 }
