@@ -5,6 +5,9 @@ import Coin from './Coin.js';
 let startBtn = document.querySelector("#start-button");
 startBtn.addEventListener("click", init);
 
+/**
+ * Funcion para inicializar el juego
+ */
 function init() {
     "use strict";
 
@@ -27,6 +30,9 @@ function init() {
         }
     });
 
+    /**
+     * Este setInterval hace los llamados necesarios para comprobar las colisiones y terminar el juego de ser necesario
+     */
     let collision = setInterval(() => {
         //console.log("y1: ", character.getPositionY(), " y2: ", (character.getHeight()+ character.getPositionY()));
         for (let i = 0; i < obstacles.length; i++) {
@@ -50,6 +56,9 @@ function init() {
 
     /*FUNCIONES*/
 
+    /**
+     * Esta funcion se encarga de comprobar si el personaje colisiono contra la moneda o alguno de los obstaculos
+     */
     function checkCollision(obstacle) {
         let coinX1 = coin.getPositionX();
         let coinX2 = coin.getWidth() + coinX1;
@@ -82,6 +91,9 @@ function init() {
         return false;
     }
 
+    /**
+     * Esta funcion se encarga de terminar el juego y detener todas las animaciones
+     */
     function stopGame() {
         let backgroundLayers = document.querySelectorAll(".scene");
         for (let i = 0; i < backgroundLayers.length; i++) {
