@@ -20,6 +20,7 @@ function init() {
     });
 
     let collision = setInterval(() => {
+        //console.log("y1: ", character.getPositionY(), " y2: ", (character.getHeight()+ character.getPositionY()));
         for (let i = 0; i < obstacles.length; i++) {
             let obstacle = obstacles[i];
             if (checkCollision(obstacle)) {
@@ -28,7 +29,7 @@ function init() {
                 character.die();
             }   
         }
-    }, 1);
+    }, 100);
 
     let obstacles = [];
     obstacles.push(obstacle);
@@ -46,7 +47,7 @@ function init() {
         let obstacleY1 = obstacle.getPositionY();
         let obstacleY2 = obstacle.getHeight() + obstacleY1;
         if ((characterX2 >= obstacleX1) && (characterX1 <= obstacleX2)) {
-            if ((characterY1 <= obstacleY1)) {
+            if ((characterY2 <= obstacleY2) && (characterY2 >= obstacleY1)) {
                 return true;
             }
             return false;
