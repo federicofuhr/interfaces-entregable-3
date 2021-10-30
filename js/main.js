@@ -2,11 +2,13 @@ import Character from './Character.js';
 import Obstacle from './Obstacle.js';
 import Coin from './Coin.js';
 
-document.addEventListener("DOMContentLoaded", init);
+let startBtn = document.querySelector("#start-button");
+startBtn.addEventListener("click", init);
 
 function init() {
     "use strict";
 
+    document.querySelector(".start-menu").style.display = "none";
     let characterDiv = document.querySelector("#character");
     let character = new Character();
     let obstacle = new Obstacle(document.querySelector("#trunk-obstacle"));
