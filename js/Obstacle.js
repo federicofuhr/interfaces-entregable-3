@@ -47,6 +47,17 @@ export default class Obstacle {
         return this.height;
     }
 
+    hide() {
+        console.log("entro al hide");
+        this.obstacle.id = "hide-obstacle";
+        this.obstacle.display = "none";
+        console.log(this.obstacle.id);
+       /* setInterval(() => {
+            this.obstacle.display = "inline-block";
+            this.obstacle.id = "trunk-obstacle2";
+        }, 500000);*/
+    }
+
     consoleLog() {
         console.log(this);
     }

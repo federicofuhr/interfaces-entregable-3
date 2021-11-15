@@ -29,6 +29,9 @@ function init() {
             character.defaultAnimation();
         }
     });
+    let hideObstacle = setInterval(() => {
+        obstacle2.getDiv().classList.toggle("hiden");
+    }, 4000);
 
     /**
      * Este setInterval hace los llamados necesarios para comprobar las colisiones y terminar el juego de ser necesario
@@ -39,6 +42,7 @@ function init() {
             let obstacle = obstacles[i];
             if (checkCollision(obstacle)) {
                 clearInterval(collision);
+                clearInterval(hideObstacle);
                 stopGame();
                 character.die();
                 setTimeout(() => {

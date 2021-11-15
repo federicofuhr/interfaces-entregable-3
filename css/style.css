@@ -161,11 +161,15 @@
     background-image: url("../img/coin/Gold_1.png");
     background-size: contain;
     background-repeat: no-repeat;
-    animation: coin-spin 3s infinite;
+    animation: coin-spin 1s linear;
 }
 
 .stop {
     animation-play-state: paused;
+}
+
+.hiden {
+    display: none;
 }
 
 .start-menu {
