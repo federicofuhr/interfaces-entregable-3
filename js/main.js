@@ -41,6 +41,7 @@ function init() {
         for (let i = 0; i < obstacles.length; i++) {
             let obstacle = obstacles[i];
             if (checkCollision(obstacle)) {
+                console.log("colisiono")
                 clearInterval(collision);
                 clearInterval(hideObstacle);
                 stopGame();

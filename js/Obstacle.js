@@ -36,7 +36,7 @@ export default class Obstacle {
      * Retorna el ancho del div que contiene al obstaculo
      */
     getWidth() {
-        return this.width;
+        return this.obstacle.offsetWidth;
     }
 
     /**
@@ -44,7 +44,7 @@ export default class Obstacle {
      * Retorna la altura del div que contiene al obstaculo
      */
     getHeight() {
-        return this.height;
+        return this.obstacle.offsetHeight;
     }
 
     hide() {
